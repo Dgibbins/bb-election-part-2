@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bikini Bottom Election</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="election.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <style media="screen">
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+  </style>
+  <body>
+
+    <div class="w3-content w3-section" style="max-width:500px">
+      <img class="mySlides w3-animate-fading" src="images/bikini-bottom.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="images/list.png" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="images/the.jpg" style="width:100%">
+          <ul id='election-list'>
+          </ul>
+          <button class="refresh">Refreshing!</button>
+      </img>
+    </div>
+
+
+    <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex === x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 5000);
+    }
+    </script>
+  </body>
+</html>
